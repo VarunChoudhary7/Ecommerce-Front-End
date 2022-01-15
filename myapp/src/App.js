@@ -9,6 +9,7 @@ import Signup from "./Components/Signup";
 import Navbar from "./Layouts/Navbar";
 import { Routes, Route } from "react-router";
 import PrivateRoute from "./Routing/PrivateRoute";
+import Footer from "./Layouts/Footer";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/admin" element={<AdminPage />} />
 
       </Routes>
+      <Footer />
     </div>
   );
 }
