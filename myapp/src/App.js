@@ -1,11 +1,11 @@
 import AdminPage from "./Components/AdminPage";
 import Home from "./Components/Home";
-import Login from "./Components/Login";
+import Login from "./Components/Auth/Login";
 import MyOrders from "./Components/MyOrders";
 import Order from "./Components/Order";
-import Product from "./Components/Product";
-import Products from "./Components/Products";
-import Signup from "./Components/Signup";
+import Product from "./Components/Products/Product";
+import Products from "./Components/Products/Products";
+import Signup from "./Components/Auth/Signup";
 import Navbar from "./Layouts/Navbar";
 import { Routes, Route } from "react-router";
 import PrivateRoute from "./Routing/PrivateRoute";
@@ -19,12 +19,17 @@ const App = () => {
       <div><Toaster /></div>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} />
         <Route path="/login" element={<PrivateRoute child={<Login />} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/products" element={<Product />} />
-        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin" element={<AdminPage />} /> */}
 
+        <Route path='/' element={<Home />} />
+        <Route path='/shop' element={<Products />} />
+        <Route path='/shop/:productId' element={<Product />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
       </Routes>
       <Footer />
     </div>
