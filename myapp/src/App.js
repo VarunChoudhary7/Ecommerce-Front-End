@@ -11,6 +11,7 @@ import { Routes, Route } from "react-router";
 import PrivateRoute from "./Routing/PrivateRoute";
 import Footer from "./Layouts/Footer";
 import { Toaster } from 'react-hot-toast'
+import Admin from "./Components/Admin/Admin";
 
 const App = () => {
   return (
@@ -30,7 +31,8 @@ const App = () => {
         <Route path='/shop/:productId' element={<Product />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
-      
+        <Route path='/admin' element={<Admin />} />
+
       </Routes>
       <Footer />
     </div>

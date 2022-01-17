@@ -192,4 +192,9 @@ const NAV_ITEMS = [
 
     },
 
+    {
+        label: 'Admin',
+        to: '/admin'
+
+    },
 ];
