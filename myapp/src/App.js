@@ -20,12 +20,7 @@ const App = () => {
       <div><Toaster /></div>
       <Navbar />
       <Routes>
-        {/* <Route path="/" element={<Home />} />
-        <Route path="/login" element={<PrivateRoute child={<Login />} />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/products" element={<Product />} />
-        <Route path="/admin" element={<AdminPage />} /> */}
-
+       
         <Route path='/' element={<Home />} />
         <Route path='/shop' element={<Products />} />
         <Route path='/shop/:productId' element={<Product />} />

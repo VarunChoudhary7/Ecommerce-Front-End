@@ -13,12 +13,12 @@ import {
     Text,
     useColorModeValue,
     Link,
-
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { Link as routerLink } from 'react-router-dom'
-import { toast } from 'react-hot-toast';
+import { Link as routerLink, useNavigate } from 'react-router-dom'
+import { signupUser } from '../../Actions/auth';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Signup() {
     const [showPassword, setShowPassword] = useState(false);
@@ -27,13 +27,27 @@ export default function Signup() {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
 
+    const dispatch = useDispatch()
+
     const handleSignup = () => {
-        const users = JSON.parse(localStorage.getItem('users')) ?? []
-        toast("SIGNUP SUCCESS")
-        localStorage.setItem('users', JSON.stringify([...users, {
-            email, firstName, lastName, password
-        }]))
+        dispatch(signupUser(email, firstName, lastName, password))
     }
+
+
+    //check to redirect the user once it has signed up
+    const navigate = useNavigate()
+
+    const { signup } = useSelector(state => state.auth)
+    if (signup && signup === true) {
+        navigate('/login')
+    }
+
+
+    useEffect(() => {
+        return () => dispatch({
+            type: "REFRESH_SIGNUP"
+        })
+    }, [])
 
     return (
         <Flex
