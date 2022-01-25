@@ -20,14 +20,12 @@ const App = () => {
       <div><Toaster /></div>
       <Navbar />
       <Routes>
-       
         <Route path='/' element={<Home />} />
         <Route path='/shop' element={<Products />} />
         <Route path='/shop/:productId' element={<Product />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/admin' element={<Admin />} />
-
       </Routes>
       <Footer />
     </div>
