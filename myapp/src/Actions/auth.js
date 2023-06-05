@@ -7,7 +7,7 @@ import { toast } from 'react-hot-toast'
 export const loginUser = (email, password) => async (dispatch) => {
 
     try {
-        const base_Url = 'http://localhost:8080'
+        const base_Url = 'https://web-production-c898.up.railway.app/'
 
         const res = await axios.post(`${base_Url}/api/v1/auth/login`, {
             email, password
@@ -37,7 +37,7 @@ export const loginUser = (email, password) => async (dispatch) => {
 export const signupUser = (email, firstName, lastName, password) => async (dispatch) => {
 
     try {
-        const base_Url = 'http://localhost:8080'
+        const base_Url = 'https://web-production-c898.up.railway.app/'
 
         const res = await axios.post(`${base_Url}/api/v1/auth/signup`, {
             email, firstName, lastName, password
